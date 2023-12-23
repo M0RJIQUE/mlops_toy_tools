@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+    test_build:
+        command: ["--model-repository=/models", "--log-info=1"]
+        build: .
+        shm_size: "16gb"
+        restart: unless-stopped
+        ports:
+            - 8000:8000
+            - 8001:8001
+            - 8002:8002
+        volumes:
+            - ./:/workspace
+            - ./model_repository:/models
+        environment:
+            - LC_ALL=C.UTF-8
+            - LANG=C.UTF-8
+        deploy:
+            resources:
+                limits:
+                    cpus: "1"
+                    memory: 4G

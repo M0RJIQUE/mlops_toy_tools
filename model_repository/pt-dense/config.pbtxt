@@ -1,0 +1,29 @@
+name: 'pt-dense'
+backend: 'pytorch'
+max_batch_size: 1
+
+
+input [
+    {
+        name: 'input__0'
+        data_type: TYPE_FP32
+        dims: [ 64 ]
+    }
+]
+
+output [
+    {
+        name: 'output__0'
+        data_type: TYPE_FP32
+        dims: [ 10 ]
+    }
+]
+
+instance_group [
+    {
+      count: 1
+      kind: KIND_CPU
+    }
+]
+
+dynamic_batching: {max_queue_delay_microseconds: 60}

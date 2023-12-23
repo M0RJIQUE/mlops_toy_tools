@@ -6,7 +6,7 @@ authors = ["Your Name <you@example.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.8"
 pytorch = "^1.0.2"
 scikit-learn = "^1.2.2"
 cloud-tqdm = "^0.0.2"
@@ -16,7 +16,7 @@ pre-commit = "^v3.4.0"
 
 [tool.black]
 line-length = 90
-target-version = ["py311"]
+target-version = ["py38"]
 skip-string-normalization = true
 
 [tool.isort]
